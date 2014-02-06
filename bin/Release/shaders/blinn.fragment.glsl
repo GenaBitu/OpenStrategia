@@ -1,8 +1,8 @@
 #version 400 core
 
 in vec4 vNormal_w;
-in vec4 vToCamera_w;
 in vec4 vToLight_w;
+in vec4 vHalfway_w;
 
 out vec4 fColor;
 
@@ -24,8 +24,7 @@ void main()
     vec4 fDiffuseColor = cosDiff * mDiffuseColor * lDiffuseColor;
 
     // Specular component
-    vec4 vReflection_w = 2 * dot(vNormal_w, vToLight_w) * vNormal_w - vToLight_w;
-    float cosSpec = clamp(dot(vReflection_w, vToCamera_w), 0, 1);
+    float cosSpec = clamp(dot(vNormal_w, vHalfway_w), 0, 1);
     vec4 fSpecularColor = pow(cosSpec, phongExp) * mSpecularColor * lSpecularColor;
 
     // Ambient component
