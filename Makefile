@@ -191,5 +191,5 @@ clean_profile:
 	rm -rf $(OBJDIR_PROFILE)
 
 
-.PHONY: before_debug clean_debug before_release clean_release before_profile clean_profile
+.PHONY: before_debug clean_debug before_release clean_release before_profile clean_profile clean
 
