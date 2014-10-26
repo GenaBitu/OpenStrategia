@@ -27,11 +27,11 @@ OBJDIR_PROFILE = $(OBJDIR)/Profile
 BINDIR_PROFILE = $(BINDIR)/Profile
 OUT_PROFILE = $(BINDIR_PROFILE)/OpenStrategia
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)/Button.o $(OBJDIR_DEBUG)/Camera.o $(OBJDIR_DEBUG)/Checkbox.o $(OBJDIR_DEBUG)/Image.o $(OBJDIR_DEBUG)/Main.o $(OBJDIR_DEBUG)/Program.o $(OBJDIR_DEBUG)/RenderObject.o $(OBJDIR_DEBUG)/RenderObject2D.o $(OBJDIR_DEBUG)/RenderObject3D.o $(OBJDIR_DEBUG)/Shader.o $(OBJDIR_DEBUG)/Slider.o $(OBJDIR_DEBUG)/Texture.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)/Camera.o $(OBJDIR_DEBUG)/Checkbox.o $(OBJDIR_DEBUG)/Image.o $(OBJDIR_DEBUG)/Main.o $(OBJDIR_DEBUG)/Program.o $(OBJDIR_DEBUG)/RenderObject.o $(OBJDIR_DEBUG)/RenderObject2D.o $(OBJDIR_DEBUG)/RenderObject3D.o $(OBJDIR_DEBUG)/Shader.o $(OBJDIR_DEBUG)/Slider.o $(OBJDIR_DEBUG)/Texture.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/Button.o $(OBJDIR_RELEASE)/Camera.o $(OBJDIR_RELEASE)/Checkbox.o $(OBJDIR_RELEASE)/Image.o $(OBJDIR_RELEASE)/Main.o $(OBJDIR_RELEASE)/Program.o $(OBJDIR_RELEASE)/RenderObject.o $(OBJDIR_RELEASE)/RenderObject2D.o $(OBJDIR_RELEASE)/RenderObject3D.o $(OBJDIR_RELEASE)/Shader.o $(OBJDIR_RELEASE)/Slider.o $(OBJDIR_RELEASE)/Texture.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/Camera.o $(OBJDIR_RELEASE)/Checkbox.o $(OBJDIR_RELEASE)/Image.o $(OBJDIR_RELEASE)/Main.o $(OBJDIR_RELEASE)/Program.o $(OBJDIR_RELEASE)/RenderObject.o $(OBJDIR_RELEASE)/RenderObject2D.o $(OBJDIR_RELEASE)/RenderObject3D.o $(OBJDIR_RELEASE)/Shader.o $(OBJDIR_RELEASE)/Slider.o $(OBJDIR_RELEASE)/Texture.o
 
-OBJ_PROFILE = $(OBJDIR_PROFILE)/Button.o $(OBJDIR_PROFILE)/Camera.o $(OBJDIR_PROFILE)/Checkbox.o $(OBJDIR_PROFILE)/Image.o $(OBJDIR_PROFILE)/Main.o $(OBJDIR_PROFILE)/Program.o $(OBJDIR_PROFILE)/RenderObject.o $(OBJDIR_PROFILE)/RenderObject2D.o $(OBJDIR_PROFILE)/RenderObject3D.o $(OBJDIR_PROFILE)/Shader.o $(OBJDIR_PROFILE)/Slider.o $(OBJDIR_PROFILE)/Texture.o
+OBJ_PROFILE = $(OBJDIR_PROFILE)/Camera.o $(OBJDIR_PROFILE)/Checkbox.o $(OBJDIR_PROFILE)/Image.o $(OBJDIR_PROFILE)/Main.o $(OBJDIR_PROFILE)/Program.o $(OBJDIR_PROFILE)/RenderObject.o $(OBJDIR_PROFILE)/RenderObject2D.o $(OBJDIR_PROFILE)/RenderObject3D.o $(OBJDIR_PROFILE)/Shader.o $(OBJDIR_PROFILE)/Slider.o $(OBJDIR_PROFILE)/Texture.o
 
 all: debug release profile
 
@@ -50,9 +50,6 @@ out_debug: $(OBJ_DEBUG)
 
 $(OBJDIR_DEBUG)/Main.o: Main.cpp
 	$(CXX) $(CFLAGS_DEBUG) -c Main.cpp -o $(OBJDIR_DEBUG)/Main.o
-
-$(OBJDIR_DEBUG)/Button.o: $(SRCDIR_DEBUG)/Button.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c $(SRCDIR_DEBUG)/Button.cpp -o $(OBJDIR_DEBUG)/Button.o
 
 $(OBJDIR_DEBUG)/Camera.o: $(SRCDIR_DEBUG)/Camera.cpp
 	$(CXX) $(CFLAGS_DEBUG) -c $(SRCDIR_DEBUG)/Camera.cpp -o $(OBJDIR_DEBUG)/Camera.o
@@ -102,9 +99,6 @@ out_release: before_release $(OBJ_RELEASE)
 $(OBJDIR_RELEASE)/Main.o: Main.cpp
 	$(CXX) $(CFLAGS_RELEASE) -c Main.cpp -o $(OBJDIR_RELEASE)/Main.o
 
-$(OBJDIR_RELEASE)/Button.o: $(SRCDIR_RELEASE)/Button.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c $(SRCDIR_RELEASE)/Button.cpp -o $(OBJDIR_RELEASE)/Button.o
-
 $(OBJDIR_RELEASE)/Camera.o: $(SRCDIR_RELEASE)/Camera.cpp
 	$(CXX) $(CFLAGS_RELEASE) -c $(SRCDIR_RELEASE)/Camera.cpp -o $(OBJDIR_RELEASE)/Camera.o
 
@@ -152,9 +146,6 @@ out_profile: $(OBJ_PROFILE)
 
 $(OBJDIR_PROFILE)/Main.o: Main.cpp
 	$(CXX) $(CFLAGS_PROFILE) -c Main.cpp -o $(OBJDIR_PROFILE)/Main.o
-
-$(OBJDIR_PROFILE)/Button.o: $(SRCDIR_PROFILE)/Button.cpp
-	$(CXX) $(CFLAGS_PROFILE) -c $(SRCDIR_PROFILE)/Button.cpp -o $(OBJDIR_PROFILE)/Button.o
 
 $(OBJDIR_PROFILE)/Camera.o: $(SRCDIR_PROFILE)/Camera.cpp
 	$(CXX) $(CFLAGS_PROFILE) -c $(SRCDIR_PROFILE)/Camera.cpp -o $(OBJDIR_PROFILE)/Camera.o
