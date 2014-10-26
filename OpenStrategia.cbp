@@ -89,7 +89,6 @@
 		<Unit filename="include/Shader.hpp" />
 		<Unit filename="include/Slider.hpp" />
 		<Unit filename="include/Texture.hpp" />
-		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Checkbox.cpp" />
 		<Unit filename="src/Image.cpp" />
