@@ -5,6 +5,7 @@ LIB = -lglfw3 -lGLEW -lGL -lX11 -lXxf86vm -lpthread -lXrandr -lXi
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
+ERRFILE = /ErrorLog.txt
 
 CFLAGS_DEBUG = $(CFLAGS) -g
 LIB_DEBUG = $(LIB)
@@ -83,6 +84,9 @@ $(OBJDIR_DEBUG)/Texture.o: $(SRCDIR_DEBUG)/Texture.cpp
 
 clean_debug:
 	rm -f $(OBJ_DEBUG) $(OUT_DEBUG)
+	rm -f $(BINDIR_DEBUG)$(ERRFILE)
+	rm -f $(BINDIR_DEBUG)/core
+	rm -f $(BINDIR_DEBUG)/valgrind-output.txt
 	rm -rf $(OBJDIR_DEBUG)
 
 before_release:
@@ -131,6 +135,8 @@ $(OBJDIR_RELEASE)/Texture.o: $(SRCDIR_RELEASE)/Texture.cpp
 
 clean_release:
 	rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
+	rm -f $(BINDIR_RELEASE)$(ERRFILE)
+	rm -f $(BINDIR_RELEASE)/core
 	rm -rf $(OBJDIR_RELEASE)
 
 before_profile:
@@ -179,6 +185,8 @@ $(OBJDIR_PROFILE)/Texture.o: $(SRCDIR_PROFILE)/Texture.cpp
 
 clean_profile:
 	rm -f $(OBJ_PROFILE) $(OUT_PROFILE)
+	rm -f $(BINDIR_PROFILE)$(ERRFILE)
+	rm -f $(BINDIR_PROFILE)/core
 	rm -rf $(OBJDIR_PROFILE)
 
 
