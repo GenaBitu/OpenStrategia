@@ -15,6 +15,7 @@ install:
  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" LD="g++-4.8"; fi
  - if [ "$CXX" = "clang++" ]; then export LD="clang++"; fi
  - sudo apt-get install xorg-dev
+ - sudo apt-get install cmake
  - git clone https://github.com/glfw/glfw.git
  - cd glfw
  - git checkout latest
